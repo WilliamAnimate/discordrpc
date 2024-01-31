@@ -1,4 +1,3 @@
-use colored::Colorize;
 use discord_rich_presence::{
     activity::{self, Activity},
     DiscordIpc, DiscordIpcClient,
@@ -29,14 +28,14 @@ pub fn run(args: Cli) {
 
     client
         .connect()
-        .expect("failed to connect to Discord, please try again or relaunch Discord app");
+        .expect("Failed to connect to Discord");
 
-    println!("{} {}", "details :".cyan(), details.yellow());
+    println!("{} {}", "details :", details);
 
     let mut activity: Activity = activity.details(&details);
 
     if state != "none" {
-        println!("{} {}", "state :".cyan(), state.yellow());
+        println!("{} {}", "state :", state);
 
         activity = activity.state(&state);
     }
@@ -44,25 +43,25 @@ pub fn run(args: Cli) {
     let mut assets = activity::Assets::new();
 
     if large_image != "none" {
-        println!("{} {}", "large image :".cyan(), large_image.yellow());
+        println!("{} {}", "large image :", large_image);
 
         assets = assets.large_image(&large_image);
     }
 
     if large_text != "none" {
-        println!("{} {}", "large image text :".cyan(), large_text.yellow());
+        println!("{} {}", "large image text :", large_text);
 
         assets = assets.large_text(&large_text);
     }
 
     if small_image != "none" {
-        println!("{} {}", "small image :".cyan(), small_image.yellow());
+        println!("{} {}", "small image :", small_image);
 
         assets = assets.small_image(&small_image);
     }
 
     if small_text != "none" {
-        println!("{} {}", "small image text :".cyan(), small_text.yellow());
+        println!("{} {}", "small image text :", small_text);
 
         assets = assets.small_text(&small_text);
     }
@@ -70,8 +69,8 @@ pub fn run(args: Cli) {
     activity = activity.assets(assets);
 
     if button_1_text != "none" && button_1_url != "none" {
-        println!("{} {}", "button 1 text :".cyan(), button_1_text.yellow());
-        println!("{} {}", "button 1 url :".cyan(), button_1_url.yellow());
+        println!("{} {}", "button 1 text :", button_1_text);
+        println!("{} {}", "button 1 url :", button_1_url);
 
         activity = activity.buttons(vec![activity::Button::new(&button_1_text, &button_1_url)]);
     }
@@ -81,8 +80,8 @@ pub fn run(args: Cli) {
         && button_2_text != "none"
         && button_2_url != "none"
     {
-        println!("{} {}", "button 2 text :".cyan(), button_2_text.yellow());
-        println!("{} {}", "button 2 url :".cyan(), button_2_url.yellow());
+        println!("{} {}", "button 2 text :", button_2_text);
+        println!("{} {}", "button 2 url :", button_2_url);
 
         activity = activity.buttons(vec![
             activity::Button::new(&button_1_text, &button_1_url),

@@ -1,5 +1,11 @@
+# rust
+*.pdb
+**/*.rs.bk
+
 # Cargo
 /target
+/debug
+Cargo.lock
 
 # IDEs
 .vscode

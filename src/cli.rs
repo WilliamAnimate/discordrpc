@@ -1,8 +1,6 @@
 use clap::Parser;
-use clap_complete::Shell;
 
 #[derive(Debug, Parser, Clone)]
-#[clap(name = "discordrpc")]
 pub struct Cli {
     #[clap(
         short = 'c',
@@ -12,7 +10,7 @@ pub struct Cli {
         display_order = 1
     )]
     pub client_id: String,
-
+    
     #[clap(
         short = 'd',
         long = "details",
@@ -119,25 +117,4 @@ pub struct Cli {
         display_order = 12
     )]
     pub enable_time: bool,
-
-    #[clap(
-        short = 'E',
-        long = "timeout",
-        help = "Exit after X seconds",
-        default_value = "0",
-        required = false,
-        display_order = 13
-    )]
-    pub timeout: u64,
-
-    #[clap(
-        long = "print-completions",
-        value_name = "shell",
-        arg_enum,
-        display_order = 14
-    )]
-    pub print_completions: Option<Shell>,
-
-    #[clap(long = "print-manpage", display_order = 15)]
-    pub manpage: bool,
 }

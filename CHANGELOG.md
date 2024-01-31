@@ -2,21 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/)
-and this project adheres to [Semantic Versioning](http://semver.org/).
-
 <!-- next-header -->
+## [v0.2.3] - 2024-1-30
+- update `clap` to v4
+- removed manpage
+- removed option `--timeout`
+- tldr: debloat alot of stuff
 
-## [Unreleased]
-
-## [0.2.2] - 2022-05-22
+## [v0.2.2] - 2022-05-22
 - bump dependencies
 
-## [0.2.1] - 2022-03-14
+## [v0.2.1] - 2022-03-14
 - added manpage
 - change license to GPL3
 
-## [0.2.0] - 2022-03-09
+## [v0.2.0] - 2022-03-09
 ### CLI
 - added completions
 - update short aliases
@@ -25,7 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Other
 - Added README
 
-## [0.1.0] - 2022-02-13
+## [v0.1.0] - 2022-02-13
 ### CLI
 - options
     - -c, --client-id <*string*>        Discord application Client ID (required)
