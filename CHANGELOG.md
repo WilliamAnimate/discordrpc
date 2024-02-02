@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 
 <!-- next-header -->
+## [v0.2.4] - 2024-2-1
+- fixed some issues (by that I mean one issue)
+
 ## [v0.2.3] - 2024-1-30
 - update `clap` to v4
 - removed manpage

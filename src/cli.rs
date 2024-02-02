@@ -111,6 +111,16 @@ pub struct Cli {
     pub button_2_url: String,
 
     #[clap(
+        short = 'E',
+        long = "timeout",
+        help = "Exit after X seconds",
+        default_value = "0",
+        required = false,
+        display_order = 13
+    )]
+    pub timeout: u64,
+
+    #[clap(
         short = 'e',
         long = "timer",
         help = "Enable timer (counted from the current time)",

@@ -1,10 +1,11 @@
 mod cli;
 mod execute;
 
-use std::io::{stdin, stdout, Read, Write};
 use crate::cli::Cli;
 use clap::Parser;
-use std::process::Command;
+use std::time::Duration;
+use std::thread::sleep;
+use std::process::exit;
 
 fn main() {
     let args = Cli::parse();
@@ -12,12 +13,16 @@ fn main() {
     // start discord rpc
     execute::run(args.clone());
     println!("Connected!");
-    pause()
-}
+    if args.timeout != 0 {
+        sleep(Duration::from_secs(args.timeout));
 
-fn pause() { // https://www.reddit.com/r/rust/comments/8tfyof/comment/e177530/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-    let mut stdout = stdout();
-    stdout.write(b"Do Ctrl + C to exit!").unwrap();
-    stdout.flush().unwrap();
-    stdin().read(&mut [0]).unwrap();
+        println!("{}", "Stopping due to timeout...");
+
+        exit(0)
+    } else {
+        loop {
+            // empty `loop {}` wastes CPU cycles
+            sleep(Duration::from_secs(9999999));
+        }
+    }
 }
