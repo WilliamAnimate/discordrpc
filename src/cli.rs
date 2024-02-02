@@ -10,7 +10,7 @@ pub struct Cli {
         display_order = 1
     )]
     pub client_id: String,
-    
+
     #[clap(
         short = 'd',
         long = "details",
@@ -109,16 +109,6 @@ pub struct Cli {
         display_order = 11
     )]
     pub button_2_url: String,
-
-    #[clap(
-        short = 'E',
-        long = "timeout",
-        help = "Exit after X seconds",
-        default_value = "0",
-        required = false,
-        display_order = 13
-    )]
-    pub timeout: u64,
 
     #[clap(
         short = 'e',

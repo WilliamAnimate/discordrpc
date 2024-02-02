@@ -99,4 +99,9 @@ pub fn run(args: Cli) {
     }
 
     client.set_activity(activity).expect("client set activity");
+    println!("connected!\npress control + c to exit");
+
+    loop {
+        std::thread::sleep(std::time::Duration::from_secs(86400));
+    }
 }
